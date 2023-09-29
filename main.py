@@ -26,6 +26,14 @@ def get_item(item_id: int):
     return data[item_id]
 
 
+@app.put("/update_item/{item_id}")
+def update_item(item_id: int, new_item: str):
+    if 0 <= item_id < len(data):
+        data[item_id] = new_item
+        return {"message": f"Item at index {item_id} updated successfully"}
+    else:
+        return {"message": "Item not found"}
+
 # Lack of input validation
 @app.post("/divide")
 def divide_numbers(dividend: float, divisor: float):
