@@ -41,18 +41,6 @@ def fetchData():
     return {"message": "Data fetched successfully"}
 
 
-# Unoptimized database access
-@app.get("/database_access")
-def database_access():
-    """
-    Accesses the database inefficiently.
-    """
-    items = []
-    for _ in range(10000):
-        items.append("item")
-    return {"message": "Data accessed successfully"}
-
-
 # Use of hard-coded values
 @app.get("/config")
 def get_config():
